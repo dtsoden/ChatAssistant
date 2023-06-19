@@ -1,0 +1,105 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://unitedstates-002.azure-apim.net/apim/azureopenai-5fa8bf56336885b130-5f9f9d190302d99739" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="AzureOpenAI" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="AzureOpenAI">Connect to the Azure OpenAI API and use the Power of GPT DAVINCI003. This connector uses a POLICY named AUTHORIZATION to set the API KEY globally.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://unitedstates-002.azure-apim.net/apim/azureopenai-5fa8bf56336885b130-5f9f9d190302d99739" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="Completion_param_body_def_prompt_def" />
+      <integer name="Completion_param_body_def_max_tokens_def" />
+      <number name="Completion_param_body_def_temperature_def" />
+      <integer name="Completion_param_body_def_frequency_penalty_def" />
+      <integer name="Completion_param_body_def_presence_penalty_def" />
+      <integer name="Completion_param_body_def_top_p_def" />
+      <integer name="Completion_param_body_def_best_of_def" />
+      <string name="Completion_param_body_def_stop_def" />
+      <object name="Completion_param_body_def">
+        <property name="prompt" type="string" />
+        <property name="max_tokens" type="integer" />
+        <property name="temperature" type="number" />
+        <property name="frequency_penalty" type="integer" />
+        <property name="presence_penalty" type="integer" />
+        <property name="top_p" type="integer" />
+        <property name="best_of" type="integer" />
+        <property name="stop" type="string" />
+      </object>
+      <string name="Completion_responses_default_def_id_def" />
+      <string name="Completion_responses_default_def_object_def" />
+      <integer name="Completion_responses_default_def_created_def" />
+      <string name="Completion_responses_default_def_model_def" />
+      <string name="Completion_responses_default_def_choices_def_items_def_text_def" />
+      <integer name="Completion_responses_default_def_choices_def_items_def_index_def" />
+      <string name="Completion_responses_default_def_choices_def_items_def_finish_reason_def" />
+      <string name="Completion_responses_default_def_choices_def_items_def_logprobs_def" />
+      <object name="Completion_responses_default_def_choices_def_items_def">
+        <property name="text" type="string" />
+        <property name="index" type="integer" />
+        <property name="finish_reason" type="string" />
+        <property name="logprobs" type="string" />
+      </object>
+      <array typeRef="Completion_responses_default_def_choices_def_items_def" name="Completion_responses_default_def_choices_def" />
+      <integer name="Completion_responses_default_def_usage_def_completion_tokens_def" />
+      <integer name="Completion_responses_default_def_usage_def_prompt_tokens_def" />
+      <integer name="Completion_responses_default_def_usage_def_total_tokens_def" />
+      <object name="Completion_responses_default_def_usage_def">
+        <property name="completion_tokens" type="integer" />
+        <property name="prompt_tokens" type="integer" />
+        <property name="total_tokens" type="integer" />
+      </object>
+      <object name="Completion_responses_default_def">
+        <property name="id" type="string" />
+        <property name="object" type="string" />
+        <property name="created" type="integer" />
+        <property name="model" type="string" />
+        <property name="choices" typeRef="Completion_responses_default_def_choices_def" />
+        <property name="usage" typeRef="Completion_responses_default_def_usage_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://unitedstates-002.azure-apim.net/apim/azureopenai-5fa8bf56336885b130-5f9f9d190302d99739">
+    <resource path="/{connectionId}/MyGPT-D003/completions">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Completion" actionName="Completion" visibility="important" siena:isDeprecated="false">
+        <doc title="Completes your prompt" />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" default="2022-12-01">
+            <option value="2022-12-01" />
+            <option value="2023-05-15" />
+          </param>
+          <param style="header" name="Content-Type" type="xs:string" required="true" fixed="application/json" />
+          <param style="header" name="api-key" type="xs:string" required="true" fixed="b26371a16be049b99c9e22983a6e865a" />
+          <param style="header" name="Host" type="xs:string" required="true" default="powerplatlearning.openai.azure.com">
+            <option value="powerplatlearning.openai.azure.com" />
+          </param>
+          <param style="header" name="Connection" type="xs:string" required="true" default="keep-alive">
+            <option value="keep-alive" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="prompt" path="/prompt" type="xs:string" required="true" default="What is the LAT:LONG of Georgia in the United States?" />
+            <param style="plain" name="max_tokens" path="/max_tokens" type="xs:int" required="true" default="350" />
+            <param style="plain" name="temperature" path="/temperature" type="xs:float" required="true" default="0.7" />
+            <param style="plain" name="frequency_penalty" path="/frequency_penalty" type="xs:int" required="true">
+              <option value="0" />
+            </param>
+            <param style="plain" name="presence_penalty" path="/presence_penalty" type="xs:int" required="true">
+              <option value="0" />
+            </param>
+            <param style="plain" name="top_p" path="/top_p" type="xs:int" required="true" default="1" />
+            <param style="plain" name="best_of" path="/best_of" type="xs:int" required="true" default="1" />
+            <param style="plain" name="stop" path="/stop" type="xs:string" required="true" default="null">
+              <option value="null" />
+            </param>
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:Completion_responses_default_def" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_azureopenai-5fa8bf56336885b130-5f9f9d190302d99739" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

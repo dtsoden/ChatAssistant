@@ -1,0 +1,123 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "new_chatassistantsetingses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "new_chatassistantsetings",
+    "MaxGetRowsCount": 500,
+    "Name": "ChatAssistantSetings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cra64_isselected": "isSelected",
+      "cra64_settingsowner": "SettingsOwner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_chatassistantsetings_AsyncOperations": "System Jobs",
+      "new_chatassistantsetings_BulkDeleteFailures": "Bulk Delete Failures",
+      "new_chatassistantsetings_DuplicateBaseRecord": "Duplicate Records (new_chatassistantsetings_DuplicateBaseRecord)",
+      "new_chatassistantsetings_DuplicateMatchingRecord": "Duplicate Records (new_chatassistantsetings_DuplicateMatchingRecord)",
+      "new_chatassistantsetings_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "new_chatassistantsetings_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "new_chatassistantsetings_ProcessSession": "Process Sessions",
+      "new_chatassistantsetings_SyncErrors": "Sync Errors",
+      "new_chatassistantsetingsid": "ChatAssistantSetings",
+      "new_maxtokens": "Max Tokens",
+      "new_prefix": "Prefix",
+      "new_settingname": "Setting Name",
+      "new_suffix": "Suffix",
+      "new_temperature": "Temperature",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "ChatAssistantSetings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "ChatAssistantSetings (Views)",
+    "Name": "_new_chatassistantsetings_views",
+    "RelatedEntityName": "ChatAssistantSetings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "08cfc57b-0974-489b-b98a-a1987fe1e9d1": "Active ChatAssistantSetings",
+      "2f5fb76f-ea33-4714-9bbe-16d4363fa6b0": "Inactive ChatAssistantSetings",
+      "c854348c-ba2b-48ae-b434-642fc15ac1e6": "ChatAssistantSetings Advanced Find View",
+      "ded96b31-7f85-4b01-a4ce-bcfcf0069589": "ChatAssistantSetings Associated View",
+      "e49e8588-a13b-4b82-a308-ecc455dc87b8": "ChatAssistantSetings Lookup View"
+    }
+  },
+  {
+    "DisplayName": "isSelected (ChatAssistantSetings)",
+    "Name": "cra64_new_chatassistantsetings_cra64_isselected",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cra64_isselected",
+        "OptionSetReferenceEntityName": "ChatAssistantSetings"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cra64_isselected",
+    "RelatedEntityName": "ChatAssistantSetings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (ChatAssistantSetings)",
+    "Name": "new_chatassistantsetings_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "ChatAssistantSetings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "ChatAssistantSetings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (ChatAssistantSetings)",
+    "Name": "new_chatassistantsetings_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "ChatAssistantSetings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "ChatAssistantSetings",
+    "Type": "OptionSetInfo"
+  }
+]

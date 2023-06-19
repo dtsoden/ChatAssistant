@@ -1,0 +1,183 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_dts_chatassistantlogs_forms",
+      "Namespace": "ChatAssistantLogs (Forms)",
+      "Values": {
+        "Information": "a43b1a5a-ab89-49fa-b983-9645baff01f9"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantfeedback_forms",
+      "Namespace": "ChatAssistantFeedbacks (Forms)",
+      "Values": {
+        "Information": "dd76276a-533e-43f6-becf-e993920f7a81"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantkeywordlist_forms",
+      "Namespace": "ChatAssistantKeyWordLists (Forms)",
+      "Values": {
+        "Information": "ba4cb9ec-7830-4737-b7aa-8e6df7f00e04"
+      }
+    },
+    {
+      "Kind": "default.cds_new_chatassistantsetings_forms",
+      "Namespace": "ChatAssistantSetings (Forms)",
+      "Values": {
+        "Information": "8444cf67-c9e8-4259-bb54-f70c4f887910"
+      }
+    },
+    {
+      "Kind": "default.cds_environmentvariabledefinition_forms",
+      "Namespace": "Environment Variable Definitions (Forms)",
+      "Values": {
+        "Information": "3853733b-a351-455d-b686-d2d05027ba4d"
+      }
+    },
+    {
+      "Kind": "default.cds_environmentvariablevalue_forms",
+      "Namespace": "Environment Variable Values (Forms)",
+      "Values": {
+        "Information": "f574a3ab-1060-43ee-a95f-9aa922b497db"
+      }
+    },
+    {
+      "Kind": "default.cds_ccat_hpsmartlogs_forms",
+      "Namespace": "ChatAssistantLogs (Forms)1",
+      "Values": {
+        "Information": "a43b1a5a-ab89-49fa-b983-9645baff01f9"
+      }
+    },
+    {
+      "Kind": "default.cds_ccat_hpsmartkeywordlist_forms",
+      "Namespace": "ChatAssistantKeyWordLists (Forms)1",
+      "Values": {
+        "Information": "ba4cb9ec-7830-4737-b7aa-8e6df7f00e04"
+      }
+    },
+    {
+      "Kind": "default.cds_cr5c4_hpsmartfeedback_forms",
+      "Namespace": "ChatAssistantFeedbacks (Forms)1",
+      "Values": {
+        "Information": "dd76276a-533e-43f6-becf-e993920f7a81"
+      }
+    },
+    {
+      "Kind": "default.cds_ccat_hpsmartlogs_forms",
+      "Namespace": "HPSmartLogs (Forms)",
+      "Values": {
+        "Information": "a43b1a5a-ab89-49fa-b983-9645baff01f9"
+      }
+    },
+    {
+      "Kind": "default.cds_cr5c4_hpsmartfeedback_forms",
+      "Namespace": "HPSmartFeedbacks (Forms)",
+      "Values": {
+        "Information": "dd76276a-533e-43f6-becf-e993920f7a81"
+      }
+    },
+    {
+      "Kind": "default.cds_ccat_hpsmartkeywordlist_forms",
+      "Namespace": "HPSmartKeyWordLists (Forms)",
+      "Values": {
+        "Information": "ba4cb9ec-7830-4737-b7aa-8e6df7f00e04"
+      }
+    },
+    {
+      "Kind": "default.cds_account_forms",
+      "Namespace": "Accounts (Forms)",
+      "Values": {
+        "Account": "8448b78f-8f42-454e-8e2a-f8196b0419af",
+        "account card": "b028db32-3619-48a5-ac51-cf3f947b0ef3",
+        "Account Card form": "cccff382-2b92-467e-bf1b-3db179512af8",
+        "Account for Interactive experience": "a72c7955-442b-4ea4-9499-b10cd18b4256",
+        "Account for Multisession experience": "ff49442f-8c60-4877-bdae-8fe51e6f4636",
+        "Account form for Customer Card": "f5f9a07e-0f28-ed11-9db1-000d3a8d107a",
+        "Account Hierarchy Tile Form": "69cff312-cfb6-4289-9631-249ab85d2c62",
+        "Account Quick Create": "c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b",
+        "Account Reference Panel": "098ae145-1567-41ec-8398-86dbaac70c9b",
+        "Accounts Dashboard": "15915835-b87c-49ec-9ffc-bfac3ac44ef1",
+        "App for Outlook Account Card": "fb65cc73-181c-468b-9bb3-82ecde306991",
+        "App for Outlook Account Quick View": "76b81f10-2a08-4f1a-9454-ee38bea94eb5",
+        "Customer profile": "e9a9c8a9-e94d-47a9-a6c3-ec37ddb83b99",
+        "In Context Form": "face3aa6-99c4-4b7e-af07-55f121cdca86",
+        "Information": "b053a39a-041a-4356-acef-ddf00182762b",
+        "Recent Cases and Entitlements": "43300723-f867-420b-ab28-976a4d12e6c4",
+        "Sales Insights": "cb430327-bcc1-416d-959d-db7592e685af",
+        "Social Profiles": "2205c86d-ed88-4a2f-a447-3b86a8781f2e",
+        "TimelineWallControl - Account- Main": "6df8e8ce-7655-468c-925e-660d59aa7f4c"
+      }
+    },
+    {
+      "Kind": "default.cds_new_master_data_general_local_forms",
+      "Namespace": "Master_Data_General_Local (Forms)",
+      "Values": {
+        "Information": "dd088196-9325-4930-9330-c69feb33cd11"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantfeedback_forms",
+      "Namespace": "ChatAssistantFeedbacks (Forms)11",
+      "Values": {
+        "Information": "dd76276a-533e-43f6-becf-e993920f7a81"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantkeywordlist_forms",
+      "Namespace": "ChatAssistantKeyWordLists (Forms)11",
+      "Values": {
+        "Information": "ba4cb9ec-7830-4737-b7aa-8e6df7f00e04"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantlogs_forms",
+      "Namespace": "ChatAssistantLogs (Forms)11",
+      "Values": {
+        "Information": "a43b1a5a-ab89-49fa-b983-9645baff01f9"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantlogs_forms",
+      "Namespace": "ChatAssistantLogs (Forms)2",
+      "Values": {
+        "Information": "a43b1a5a-ab89-49fa-b983-9645baff01f9"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantkeywordlist_forms",
+      "Namespace": "ChatAssistantKeyWordLists (Forms)2",
+      "Values": {
+        "Information": "ba4cb9ec-7830-4737-b7aa-8e6df7f00e04"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantfeedback_forms",
+      "Namespace": "ChatAssistantFeedbacks (Forms)2",
+      "Values": {
+        "Information": "dd76276a-533e-43f6-becf-e993920f7a81"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantlogs_forms",
+      "Namespace": "ChatAssistantLogs (Forms)3",
+      "Values": {
+        "Information": "a43b1a5a-ab89-49fa-b983-9645baff01f9"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantfeedback_forms",
+      "Namespace": "ChatAssistantFeedbacks (Forms)3",
+      "Values": {
+        "Information": "dd76276a-533e-43f6-becf-e993920f7a81"
+      }
+    },
+    {
+      "Kind": "default.cds_dts_chatassistantkeywordlist_forms",
+      "Namespace": "ChatAssistantKeyWordLists (Forms)3",
+      "Values": {
+        "Information": "ba4cb9ec-7830-4737-b7aa-8e6df7f00e04"
+      }
+    }
+  ]
+}

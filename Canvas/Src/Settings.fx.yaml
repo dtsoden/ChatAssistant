@@ -1,0 +1,431 @@
+Settings As screen:
+    OnVisible: |-
+        =//Find Previous Selected item
+        Set(vFindSelected,Filter(ChatAssistantSetings,
+                                    SettingsOwner = User().Email 
+                                        And 
+                                    isSelected = true 
+                                )
+            );
+        Set(vNewPromptProfile,false)
+
+    "'AppHeader-Tablet_8' As 'AppHeader-Tablet'":
+        AppLogo: ='ds-Logo-BW'
+        HeaderTitle: ="Prompt Engineering Setting"
+        LeftGradient: =ThemeColors.HeaderLeft
+        MidGradient: =ThemeColors.HeaderMiddle
+        RadiusBottomLeftPx: =0
+        RightGradient: =ThemeColors.HeaderRight
+        ShowLogo: =false
+        Width: =Parent.Width
+
+    "'AppFooter-Tablet_6' As 'AppFooter-Tablet'":
+        ApplicationName: =gVersion
+        BackgroundColor: =ThemeColors.Button
+        CopyrightOwner: ="Demo"
+        Fill: ='AppFooter-Tablet_6'.BackgroundColor
+        Height: ='AppFooter-Tablet_6'.FooterHeight
+        Y: =693
+        ZIndex: =2
+
+    imgLogo_1 As image:
+        Image: ='240'
+        OnSelect: =Launch(vAppURL & "&hidenavbar=true",{},"_self")
+        X: =20
+        ZIndex: =3
+
+    "'img PowerAppLogo_3' As image":
+        Height: =58
+        Image: =PowerApps
+        Width: =61
+        X: =1082
+        Y: =701
+        ZIndex: =4
+
+    icoBack3_1 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: |-
+            =If(CountRows(Filter(ChatAssistantSetings,SettingsOwner = User().Email And isSelected = true)) = 0,
+            Patch(ChatAssistantSetings,
+                            Defaults(ChatAssistantSetings),
+                            {
+                                'Setting Name':"Default Profile",
+                                isSelected:true,
+                                SettingsOwner:User().Email,
+                                Prefix:"You are a business professional 40 years in age who writes in a very professional tone for your company",
+                                Suffix:"When applicable, provide any next steps in an ordered list. Otherwise do not include this",
+                                Temperature:0.7,
+                                'Max Tokens':500
+                            }
+                        );
+            Refresh(ChatAssistantSetings)
+            );
+            Navigate(General,ScreenTransition.Fade);
+            Set(vAdminNav,true);
+            Set(vNewPromptProfile,false);
+        X: =1278
+        Y: =20
+        ZIndex: =5
+
+    contProfileGal As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =547
+        Width: =428
+        X: =20
+        Y: =131
+        ZIndex: =23
+
+        "galSettings As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =499
+            Items: =Sort(Filter(ChatAssistantSetings,SettingsOwner = User().Email),isSelected,SortOrder.Descending)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =
+            TemplatePadding: =0
+            TemplateSize: =90
+            Width: =428
+            Y: =If(vNewPromptProfile,0,48)
+            ZIndex: =1
+
+            Title4 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =26
+                OnSelect: =
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.'Setting Name'  & If(ThisItem.isSelected,"👈")
+                VerticalAlign: =VerticalAlign.Top
+                Width: =245
+                X: =66
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle4.Size * 1.8)) / 2
+                ZIndex: =1
+
+            Subtitle4 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: ="Last Modified " & ThisItem.'Modified On'
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title4.Width
+                X: =Title4.X
+                Y: =Title4.Y + Title4.Height
+                ZIndex: =2
+
+            NextArrow4 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
+            Separator4 As rectangle:
+                Fill: =ThemeColors.Accent
+                Height: =2
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =88
+                ZIndex: =4
+
+            Rectangle6 As rectangle:
+                Fill: =ThemeColors.Primary
+                Height: =Parent.TemplateHeight - Separator4.Height
+                OnSelect: =
+                Visible: =If(ThisItem.IsSelected, true, false)
+                Width: =4
+                ZIndex: =5
+
+            Icon1 As icon.Trash:
+                Color: =ThemeColors.Secondary
+                Height: =50
+                Icon: =Icon.Trash
+                OnSelect: =Remove(ChatAssistantSetings,ThisItem)
+                Width: =42
+                X: =14
+                Y: =19
+                ZIndex: =6
+
+        Button2 As button:
+            Fill: =ThemeColors.Accent
+            Height: =48
+            HoverFill: =ThemeColors.Primary
+            OnSelect: =Set(vNewPromptProfile,true)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Create New Prompt Profile"
+            Visible: =!vNewPromptProfile
+            Width: =428
+            ZIndex: =2
+
+    Container2 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =547
+        Width: =890
+        X: =463
+        Y: =131
+        ZIndex: =24
+
+        lblPrefix As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            Text: |-
+                ="Prefix:"
+            Tooltip: ="This portion is hidden from the user but will go BEFORE the user's prompt text. Used to set the persona and tone of a prompt. Can be used to set up use case setups such as Technical Support Responses, to Sales Emails, and many other scenario's"
+            Width: =75
+            X: =28
+            Y: =74
+            ZIndex: =1
+
+        lblSuffix As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            Text: |-
+                ="Suffix:"
+            Tooltip: ="Hidden from the end user, we will insert this text after the user's prompt and can be useful to help format the output in a certain way or to add a consistent output and format."
+            Width: =75
+            X: =28
+            Y: =229
+            ZIndex: =2
+
+        txtPrefix As text:
+            BorderColor: =ThemeColors.Accent
+            Default: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    galSettings.Selected.Prefix
+                )
+            Height: =133
+            Mode: =TextMode.MultiLine
+            Tooltip: ="This portion is hidden from the user but will go BEFORE the user's prompt text. Used to set the persona and tone of a prompt. Can be used to set up use case setups such as Technical Support Responses, to Sales Emails, and many other scenario's"
+            Width: =750
+            X: =114
+            Y: =87
+            ZIndex: =3
+
+        txtSuffix As text:
+            BorderColor: =ThemeColors.Accent
+            Default: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    galSettings.Selected.Suffix
+                )
+            Height: =139
+            Mode: =TextMode.MultiLine
+            Tooltip: ="Hidden from the end user, we will insert this text after the user's prompt and can be useful to help format the output in a certain way or to add a consistent output and format."
+            Width: =750
+            X: =114
+            Y: =244
+            ZIndex: =4
+
+        btnSave As button:
+            Fill: =ThemeColors.Primary
+            HoverColor: =Color.White
+            HoverFill: =ThemeColors.Accent
+            OnSelect: |-
+                =// Patch the current form record
+                If(vNewPromptProfile,
+                        Patch(ChatAssistantSetings,
+                                Defaults(ChatAssistantSetings),
+                                {
+                                    'Setting Name':txtSettingsName.Text,
+                                    isSelected:tglIsSelected.Value,
+                                    SettingsOwner:User().Email,
+                                    Prefix:txtPrefix.Text,
+                                    Suffix:txtSuffix.Text,
+                                    Temperature:SliderTemperature.Value / 10,
+                                    'Max Tokens':SliderMaxTokens.Value
+                                }
+                            ); 
+                            // Remove previous selected item if this item is the currently selected item
+                            If(tglIsSelected.Value = true,Patch(ChatAssistantSetings,First(vFindSelected),{isSelected:false}))
+                            
+                    , //seperator for top level true | false
+                
+                            Patch(ChatAssistantSetings,
+                                galSettings.Selected,
+                                {
+                                    'Setting Name':txtSettingsName.Text,
+                                    isSelected:tglIsSelected.Value,
+                                    SettingsOwner:User().Email,
+                                    Prefix:txtPrefix.Text,
+                                    Suffix:txtSuffix.Text,
+                                    Temperature:SliderTemperature.Value / 10,
+                                    'Max Tokens':SliderMaxTokens.Value
+                                }
+                            );
+                            // Remove previous selected item
+                            If(First(vFindSelected).ChatAssistantSetings = galSettings.Selected.ChatAssistantSetings,
+                                Blank(),
+                                Patch(ChatAssistantSetings,First(vFindSelected),{isSelected:false})
+                                )
+                );
+                
+                Notify("Settings Applied Successfully",NotificationType.Success,3000);
+                Refresh(ChatAssistantSetings);
+                Set(vAdminNav,true);
+                Set(vNewPromptProfile,false);
+                Navigate(General,ScreenTransition.CoverRight)
+            Text: ="Save"
+            X: =704
+            Y: =496
+            ZIndex: =5
+
+        SliderMaxTokens As slider:
+            BorderColor: =ThemeColors.Accent
+            Default: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    galSettings.Selected.'Max Tokens'
+                )
+            HandleSize: =20
+            Height: =35
+            Max: =4038
+            Min: =100
+            ShowValue: =false
+            Tooltip: ="lengths of the model’s response"
+            Width: =550
+            X: =262
+            Y: =388
+            ZIndex: =6
+
+        lblMaxTokens As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Semibold
+            Text: ="Max Words"
+            Tooltip: ="lengths of the model’s response"
+            Width: =156
+            X: =106
+            Y: =383
+            ZIndex: =7
+
+        lblMaxTokensValue As label:
+            Color: =ThemeColors.Accent
+            Text: =RoundUp(SliderMaxTokens.Value / 3,0)
+            Width: =52
+            X: =812
+            Y: =383
+            ZIndex: =8
+
+        SliderTemperature As slider:
+            BorderColor: =ThemeColors.Accent
+            Default: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    galSettings.Selected.Temperature * 10
+                )
+            HandleSize: =20
+            Max: =10
+            Min: =1
+            ShowValue: =false
+            Tooltip: ="It means that, if the same question is asked multiple times, a model will a lower Creativness will be more deterministic in its responses. A model with 0 Creativness will answer the same sentence every time the same answer is generated."
+            Width: =550
+            X: =262
+            Y: =448
+            ZIndex: =9
+
+        lblTemperature As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Semibold
+            Text: ="Creativeness"
+            Tooltip: ="It means that, if the same question is asked multiple times, a model will a lower Creativness will be more deterministic in its responses. A model with 0 Creativness will answer the same sentence every time the same answer is generated."
+            Width: =156
+            X: =106
+            Y: =448
+            ZIndex: =10
+
+        lbltemperatureValue As label:
+            Color: =ThemeColors.Accent
+            Text: =SliderTemperature.Value / 10
+            Width: =52
+            X: =812
+            Y: =442
+            ZIndex: =11
+
+        tglIsSelected As toggleSwitch:
+            Default: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    galSettings.Selected.isSelected
+                )
+            FalseFill: =ThemeColors.Secondary
+            FalseText: ="Selected"
+            Height: =40
+            TrueFill: =ThemeColors.Primary
+            TrueText: ="Selected"
+            Width: =160
+            X: =704
+            Y: =29
+            ZIndex: =12
+
+        lblSettingsName As label:
+            Align: =Align.Right
+            FontWeight: =FontWeight.Semibold
+            Text: |-
+                ="Name:"
+            Width: =75
+            X: =28
+            Y: =29
+            ZIndex: =13
+
+        txtSettingsName As text:
+            Default: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    galSettings.Selected.'Setting Name'
+                )
+            Width: =550
+            X: =114
+            Y: =29
+            ZIndex: =14
+
+        lblOwner As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =21
+            Italic: =true
+            Text: |-
+                =If(vNewPromptProfile,
+                    Blank(),
+                    "Owner: " & galSettings.Selected.SettingsOwner
+                )
+            Width: =750
+            X: =114
+            Y: =8
+            ZIndex: =15
+
+        Label3 As label:
+            Color: =RGBA(0, 134, 208, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =28
+            Italic: =true
+            OnSelect: |-
+                =Launch("https://learnprompting.org/docs/intro",{},"_new")
+            Size: =14
+            Text: ="🎁Learn More... about prompt engineering.  "
+            Tooltip: ="Click to Launch"
+            Underline: =true
+            Width: =396
+            Y: =519
+            ZIndex: =16
+
