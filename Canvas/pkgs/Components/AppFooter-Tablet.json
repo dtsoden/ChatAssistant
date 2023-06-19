@@ -1289,7 +1289,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "638227416408937248",
+    "LastModifiedTimestamp": "638227871676171767",
     "Name": "AppFooter-Tablet",
     "Rules": [
       {
@@ -1439,7 +1439,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638227416408937248",
+  "LastModifiedTimestamp": "638227871676171767",
   "Name": "a37fa5f67d4047a4ac65a9967b67ab08",
   "OverridableProperties": {},
   "SourceLibraryId": "d6ab97ec-67bb-4382-8bc3-2b8dbc01ddec",

@@ -21,7 +21,7 @@
       "cdsdataformatting": false,
       "classiccontrols": false,
       "consistentreturnschemafortabularfunctions": true,
-      "copyandmerge": true,
+      "copyandmerge": false,
       "datatablev2control": true,
       "dataverseactionsenabled": false,
       "delaycontrolrendering": true,

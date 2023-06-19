@@ -1041,7 +1041,7 @@
       },
       "ShowLogo"
     ],
-    "LastModifiedTimestamp": "638227416408828173",
+    "LastModifiedTimestamp": "638227871676062411",
     "Name": "AppHeader-Tablet",
     "Rules": [
       {
@@ -1417,7 +1417,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638227416408828173",
+  "LastModifiedTimestamp": "638227871676062411",
   "Name": "0010cae9c755471ab83d4e8fa0509316",
   "OverridableProperties": {},
   "SourceLibraryId": "d6ab97ec-67bb-4382-8bc3-2b8dbc01ddec",
